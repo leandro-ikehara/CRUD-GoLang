@@ -26,12 +26,6 @@ func RetornaUmaPersonalidade(w http.ResponseWriter, r *http.Request) {
 	var personalidade model.Personalidade
 	database.DB.First(&personalidade, id)
 	json.NewEncoder(w).Encode(personalidade)
-
-	// for _, personalidade := range model.Personalidades {
-	// 	if strconv.Itoa(personalidade.Id) == id {
-	// 		json.NewEncoder(w).Encode(personalidade)
-	// 	}
-	// }
 }
 
 func CriaPersonalidade(w http.ResponseWriter, r *http.Request) {
